@@ -1,0 +1,215 @@
+body,
+html {
+    overflow-x: hidden;
+    padding: 0 !important;
+    direction: rtl;
+    background: url(../img/3.jfif);
+    background-size: 100%;
+}
+
+.userVideo {
+    position: fixed;
+    top: 72%;
+    animation: borderColor infinite 4s;
+    padding: 15px;
+    border: 2px solid rgb(0, 255, 170);
+    border-radius: 6px;
+    right: 2%;
+    width: 15%;
+    height: 24%;
+}
+
+.userVideo>video {
+    display: none !important;
+}
+
+.userVideo>canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.register_form {
+    width: 100%;
+    height: auto;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.register_form>input {
+    width: 100%;
+    height: auto;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 6px;
+    outline: none;
+    border: 1px solid rgb(231, 231, 231);
+    box-shadow: 1px 1px 8px gray;
+}
+
+h1 {
+    color: white;
+    position: relative;
+    width: fit-content;
+    font-size: 28px;
+    margin: auto;
+    margin-top: 40px;
+    padding: 20px 25px;
+}
+
+h1::before {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    right: 100%;
+    top: 55%;
+    background: rgb(0, 255, 255);
+    border: 1px solid rgb(0, 81, 119);
+    box-shadow: 1px 1px 8px rgb(91, 255, 200);
+    border-radius: 20px;
+}
+
+h1::after {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    left: 100%;
+    top: 55%;
+    background: rgb(0, 255, 255);
+    border: 1px solid rgb(0, 81, 119);
+    box-shadow: 1px 1px 8px rgb(91, 255, 200);
+    border-radius: 20px;
+}
+
+.window {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    right: 5%;
+    top: 5%;
+    background: white;
+    margin: auto !important;
+    border-radius: 8px;
+    box-shadow: 1px 2px 6px rgb(197, 197, 197);
+    border: 1px solid rgb(209, 209, 209);
+}
+
+.welcome {
+    text-align: center;
+    font-size: 35px;
+}
+
+.texts {
+    direction: ltr;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 45px;
+}
+.texts>p>strong{
+    margin: 0 20px;
+}
+@keyframes borderColor {
+    0% {
+        box-shadow: 1px 1px 15px rgb(0, 247, 255);
+        border: 1px solid rgb(0, 247, 255);
+    }
+
+    25% {
+        box-shadow: 1px 1px 15px rgb(0, 255, 34);
+        border: 1px solid rgb(0, 255, 34);
+    }
+
+    50% {
+        box-shadow: 1px 1px 15px rgb(255, 230, 0);
+        border: 1px solid rgb(255, 230, 0);
+    }
+
+    75% {
+        box-shadow: 1px 1px 15px rgb(255, 230, 0);
+        border: 1px solid rgb(255, 230, 0);
+    }
+
+    100% {
+        box-shadow: 1px 1px 15px rgb(0, 255, 42);
+        border: 1px solid rgb(0, 255, 42);
+    }
+
+}
+
+.usernameShow {
+    margin: 25px !important;
+    margin-bottom: 50px !important;
+}
+
+.content {
+    background: rgba(0, 0, 0, 0.788);
+    padding: 45px;
+    padding-bottom: 85px !important;
+    /* animation: borderColor infinite 4s; */
+    border-radius: 6px;
+    box-shadow: 1px 1px 15px rgb(0, 247, 255);
+    border: 1px solid rgb(0, 247, 255);
+    width: 65%;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    margin: 120px auto;
+}
+
+.content>input:not(.btn) {
+    width: 100%;
+    color: white !important;
+    padding: 20px 25px;
+    border: none;
+    border-bottom: 1px solid white;
+    background: transparent;
+    transition-duration: 900ms;
+    margin: 10px 0;
+    outline: none;
+}
+
+.content>input::placeholder {
+    color: white;
+}
+
+.content>input:focus {
+    border-bottom: 1px solid rgb(0, 204, 255);
+}
+
+select {
+    color: white !important;
+    background: transparent !important;
+    margin: 10px 0;
+    font-weight: 700;
+    outline: none;
+    font-size: 17px;
+    border: none;
+    border-bottom: 1px solid white;
+    padding: 20px 25px;
+}
+
+select:focus {
+    background: black !important;
+}
+
+.btn {
+    width: fit-content;
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.alert {
+    width: 90%;
+    max-width: 90% !important;
+    margin: auto;
+}
+
+.alert_scroll {
+    overflow: scroll !important;
+}
+
+.alert_w_break {
+    word-wrap: break-word !important;
+}

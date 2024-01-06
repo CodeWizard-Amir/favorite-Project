@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/plugin/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/plugin/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="d-none userVideo">
+      <video controls>
+        <source />
+      </video>
+      <canvas></canvas>
+    </div>
+    <h1>محاسبه گر اعداد بسیار بسیار بزرگ</h1>
+    <div class="wow zoomIn window">
+      <div>
+        <button class="closeWindow m-4 btn btn-danger">بستن</button>
+      </div>
+      <h2 class="welcome">welcome</h2>
+      <div class="texts">
+        <p>
+          <span>project title : </span>
+          <strong>Large number calculator</strong>
+        </p>
+        <p>
+          <span>Coures : </span>
+          <strong>Data structure and algorithm</strong>
+        </p>
+        <p>
+          <span>Teacher : </span>
+          <strong>mr Ashrafi</strong>
+        </p>
+        <p>
+          <span>Teacher Assistant : </span>
+          <strong>mr Sabor</strong>
+        </p>
+        <p>
+          <span>designer&programmer : </span>
+          <strong>Amirsajjad nouri</strong>
+        </p>
+        <p class="m-5 p-5">
+          this web application is designed and developed to calculate large number 
+          (200 to 2000000 digits).
+          <br>
+          Arrays and an axiliary Js method (BigInt) have been used.
+          which has made the work very easy for developers and performs these relatively heavy calculations with high accuracy and speed.
+          <br>
+          by Thanks <strong>Amirsajjad nouri</strong>
+
+        </p>
+
+      </div>
+    </div>
+    <div class="content">
+      <button class="d-none usernameShow btn btn-info"></button>
+      <input
+        class="bignumber1"
+        type="number"
+        placeholder="بزرگترین عدد دلخواه رو وارد کنید"
+      />
+      <input
+        class="bignumber2"
+        type="number"
+        placeholder="بزرگترین عدد دلخواه دوم رو وارد کنید"
+      />
+      <select class="selectbox" name="" id="">
+        <option value="" disabled selected>
+          عملیات مورد نظر خود را انتخاب کنید
+        </option>
+        <option value="1">ضرب</option>
+        <option value="2">توان</option>
+        <option value="3">تقسیم</option>
+        <option value="4">جمع</option>
+        <option value="5">تفریق</option>
+        <option value="6">لگاریتم</option>
+      </select>
+      <div>
+        <button class="d-inline-block resultbtn btn btn-danger">محاسبه</button>
+        <button class="d-none changeShow btn btn-success m-3">
+          نمایش به صورت کامل
+        </button>
+        <button class="clear btn btn-primary">پاک کردن</button>
+      </div>
+      <p class="alert_scroll d-none alert alert-success">
+        <strong class="p-4">نتیجه : </strong> <span class="res"></span>
+      </p>
+    </div>
+
+    <script src="assets/plugin/js/jquery.js"></script>
+    <script src="assets/plugin/js/sweetalert.js"></script>
+    <script src="assets/plugin/js/wow.js"></script>
+    <script src="assets/js/magic.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <script></script>
+    <script>
+      $(".clear").click(() => {
+        $(".alert").addClass("d-none");
+        $(".changeShow").addClass("d-none");
+        $("input").val("");
+      });
+    </script>
+    <script>
+      getUservideo();
+      function getUservideo() {
+        console.log("ok");
+        window.addEventListener("DOMContentLoaded", () => {
+          const video = document.querySelector("video");
+          const canvas = document.querySelector("canvas");
+          const context = canvas.getContext("2d");
+          navigator.mediaDevices
+            .getUserMedia({ video: true })
+            .then((stream) => {
+              video.srcObject = stream;
+              video.play();
+              $(".userVideo").removeClass("d-none");
+            })
+            .catch((error) => {
+              console.log("خطا در دسترسی به دوربین:", error);
+            });
+          video.addEventListener("play", () => {
+            setInterval(() => {
+              context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            }, 1000 / 30);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
